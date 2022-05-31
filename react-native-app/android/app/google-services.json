@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "186218056664",
+    "project_id": "mirky-351704",
+    "storage_bucket": "mirky-351704.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186218056664:android:c6358995fd548b267080ad",
+        "android_client_info": {
+          "package_name": "com.dickey.mirky"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186218056664-5bnh6tqng0mgef8788897nhlm8ch7rim.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0t-Exqr3pZcAydTFSxsx-jxdUsWL69qA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186218056664-5bnh6tqng0mgef8788897nhlm8ch7rim.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
