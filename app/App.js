@@ -1,21 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomePage from './pages/home';
+import ProfilePage from './pages/profile'
+import CardsPage from './pages/cards'
+import OnboardingScreen from './pages/onboarding';
+import BankPage from './pages/bank';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <NavigationContainer>
+      <Stack.Navigator>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+        <Stack.Screen
+          name="Home"
+          component={HomePage}
+          options={{ headerShown: false, animation: 'fade' }}
+        />
+
+        <Stack.Screen
+          name="Cards"
+          component={CardsPage}
+          options={{ headerShown: false, animation: 'fade' }}
+        />
+
+        <Stack.Screen
+          name="Bank"
+          component={BankPage}
+          options={{ headerShown: false, animation: 'fade' }}
+        />
+
+        <Stack.Screen
+          name="Profile"
+          component={ProfilePage}
+          options={{ headerShown: false, animation: 'fade' }}
+        />
+
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export default App;

@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "186218056664",
+    "project_id": "mirky-351704",
+    "storage_bucket": "mirky-351704.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186218056664:android:728708c10629ff637080ad",
+        "android_client_info": {
+          "package_name": "com.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186218056664-5bnh6tqng0mgef8788897nhlm8ch7rim.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0t-Exqr3pZcAydTFSxsx-jxdUsWL69qA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186218056664-5bnh6tqng0mgef8788897nhlm8ch7rim.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "186218056664-kpg3dk3nestm12atc9ioto3s6njpcakt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dickey.mirky"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186218056664:android:c0b2a7752a9c04437080ad",
+        "android_client_info": {
+          "package_name": "com.mirky"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186218056664-mcv1l5s2nttkk2qf5j9oqhtjhmbvupqf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mirky",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "186218056664-5bnh6tqng0mgef8788897nhlm8ch7rim.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0t-Exqr3pZcAydTFSxsx-jxdUsWL69qA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186218056664-5bnh6tqng0mgef8788897nhlm8ch7rim.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "186218056664-kpg3dk3nestm12atc9ioto3s6njpcakt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dickey.mirky"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
