@@ -1,20 +1,21 @@
 {
-  "hosting": {
-    "site": "mirky-api",
-    "public": "website-public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-
-    "rewrites": [{
-      "source": "**",
-      "function": "api"
-    }]
-  },
-  "functions": {
-    "source": "./src",
-    "runtime": "nodejs16"
+    "hosting": {
+      "site": "mirky-api",
+      "public": "website-public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+  
+      "rewrites": [{
+        "source": "**",
+        "function": "api"
+      }]
+    },
+    "functions": {
+      "source": "./src",
+      "runtime": "nodejs16"
+    }
   }
-}
+  

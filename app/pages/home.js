@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Pressable } from 'react-native';
+import { LinearTextGradient } from "react-native-text-gradient";
 
 const HomeScreen = ({ navigation }) => {
   const [srVal, setCount] = useState('0');
@@ -52,7 +53,17 @@ const HomeScreen = ({ navigation }) => {
 
       <View style={styles.body}>
 
-        <Text style={styles.bodySendValue}>${srVal}</Text>
+        {/* <Text style={styles.bodySendValue}>${srVal}</Text> */}
+
+        <LinearTextGradient
+          style={{ fontWeight: "bold", fontSize: 72 }}
+          locations={[0, 1]}
+          colors={["red", "blue"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+        >
+          {/* <Text>THIS IS TEXT GRADIENT</Text> */}
+        </LinearTextGradient>;
 
         <View style={styles.spacer2} />
         <View style={styles.spacer2} />
@@ -289,7 +300,7 @@ const styles = StyleSheet.create({
 
   keyboardNum: {
     position: 'relative',
-    borderColor: '#9d9d9d',
+    borderColor: '#3d3d3d',
     borderWidth: 2,
     borderRadius: 13,
     width: 90,
