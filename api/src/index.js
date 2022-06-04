@@ -5,7 +5,7 @@ const { initializeApp } = require("firebase-admin/app");
 const { getAuth } = require('firebase-admin/auth');
 const argon2 = require('argon2');
 const dotenv = require('dotenv');
-dotenv.config()
+dotenv.config({ path: './src/.env' })
 
 // Twilio Config
 const twilioAccountSid = process.env.TWILIO_ACCOUNT_SID;
