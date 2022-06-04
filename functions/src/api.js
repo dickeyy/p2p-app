@@ -4,13 +4,6 @@ const express = require('express')
 const fireAdmin = require("firebase-admin");
 const { initializeApp } = require("firebase-admin/app")
 const { getAuth } = require('firebase-admin/auth')
-// const { MongoClient, ServerApiVersion } = require('mongodb');
-
-// Connect Mongo
-// const uri = 'mongodb+srv://kyledickey:loudogky8@cluster0.4lv6urk.mongodb.net/?retryWrites=true&w=majority';
-// const mClient = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-// // mClient.connect();
-// const db = mClient.db('main')
 
 // Service account
 var serviceAccount = require('./mirky-351704-firebase-adminsdk-3h65w-5b3e9079b1.json');
@@ -27,6 +20,14 @@ const api = express()
 
 // Main Page
 api.post('/authenticate', (req, res) => {
+    const { MongoClient, ServerApiVersion } = require('mongodb');
+
+    // Connect Mongo
+    const uri = 'mongodb+srv://kyledickey:loudogky8@cluster0.4lv6urk.mongodb.net/?retryWrites=true&w=majority';
+    const mClient = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    // mClient.connect();
+    const db = mClient.db('main')
+
     // const email = req.headers['user']['email']
     // const password = req.headers['user']['password']
 
