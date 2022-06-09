@@ -1,0 +1,123 @@
+swagger: "2.0"
+info:
+  description: "Mirky is the easiest way to send and recieve money online."
+  title: "Mirky API"
+  version: "1.0.0"
+host: "api.mirky.app"
+# [END swagger]
+consumes:
+- "application/json"
+produces:
+- "application/json"
+schemes:
+- "https"
+x-google-backend:
+    address: https://api.mirky.app
+    protocol: h2
+paths:
+  "/auth/signup":
+    post:
+      description: "Signup creates a new user"
+      operationId: "signup"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Signup Successful"
+          schema:
+            $ref: "#/definitions/signupMessage"
+        403: 
+          description: "Invalid API Key"
+          schema:
+            $ref: "#/definitions/signupMessage_invalid_api_key"
+        418:
+          description: "Username is taken"
+          schema: 
+            $ref: "#/definitions/signupMessage_username_taken"
+      parameters:
+      - description: "User Data"
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: "#/definitions/signupMessage"
+  "/auth/login":
+    post:
+      description: "Logs in a user"
+      operationId: "login"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Authenication info"
+          schema:
+            $ref: "#/definitions/authInfoResponse"
+#   "/auth/info/googleidtoken":
+#     get:
+#       description: "Returns the requests' authentication information."
+#       operationId: "authInfoGoogleIdToken"
+#       produces:
+#       - "application/json"
+#       responses:
+#         200:
+#           description: "Authenication info."
+#           schema:
+#             $ref: "#/definitions/authInfoResponse"
+#       security:
+#       - google_id_token: []
+definitions:
+  signupMessage:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+  signupMessage_invalid_api_key:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+  signupMessage_username_taken:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+  authInfoResponse:
+    type: "object"
+    properties: 
+      message: 
+        type: "string"
+# This section requires all requests to any path to require an API key.
+# security:
+# - api_key: []
+# securityDefinitions:
+#   # This section configures basic authentication with an API key.
+#   api_key:
+#     type: "apiKey"
+#     name: "key"
+#     in: "query"
+  # This section configures authentication using Google API Service Accounts
+  # to sign a json web token. This is mostly used for server-to-server
+  # communication.
+  # google_jwt:
+  #   authorizationUrl: ""
+  #   flow: "implicit"
+  #   type: "oauth2"
+  #   # This must match the 'iss' field in the JWT.
+  #   x-google-issuer: "jwt-client.endpoints.sample.google.com"
+  #   # Update this with your service account's email address.
+  #   x-google-jwks_uri: "https://www.googleapis.com/service_accounts/v1/jwk/YOUR-SERVICE-ACCOUNT-EMAIL"
+  #   # This must match the "aud" field in the JWT. You can add multiple
+  #   # audiences to accept JWTs from multiple clients.
+  #   x-google-audiences: "echo.endpoints.sample.google.com"
+  # # This section configures authentication using Google OAuth2 ID Tokens.
+  # # ID Tokens can be obtained using OAuth2 clients, and can be used to access
+  # # your API on behalf of a particular user.
+  # google_id_token:
+  #   authorizationUrl: ""
+  #   flow: "implicit"
+  #   type: "oauth2"
+  #   x-google-issuer: "https://accounts.google.com"
+  #   x-google-jwks_uri: "https://www.googleapis.com/oauth2/v3/certs"
+  #   # Your OAuth2 client's Client ID must be added here. You can add
+  #   # multiple client IDs to accept tokens from multiple clients.
+  #   x-google-audiences: "YOUR-CLIENT-ID"

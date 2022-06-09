@@ -58,6 +58,7 @@ const BankPage = ({ navigation }) => {
             <ScrollView>
 
                 <View style={styles.balanceContainer}>
+                  {/* Eventially make a function to fetch users balance */}
                     <Text style={styles.balance}>$0</Text>
                     
                     <View style={styles.spacer2} />
@@ -65,7 +66,7 @@ const BankPage = ({ navigation }) => {
 
                     <View style={styles.sendBtnGroup}>
 
-                        <Pressable style={styles.sendButton} onPress={signUp}>
+                        <Pressable style={styles.sendButton}>
                             <Text style={styles.sendButtonText}>Take Out</Text>
                         </Pressable>
 
@@ -76,6 +77,10 @@ const BankPage = ({ navigation }) => {
                         </Pressable>
 
                     </View>
+
+                </View>
+
+                <View>
 
                 </View>
 

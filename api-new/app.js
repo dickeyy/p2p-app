@@ -24,8 +24,7 @@ const db = mClient.db('main')
 
 // Connect to firebase
 // Service account
-var serviceAccount = require('../../mirky-351704-firebase-adminsdk-3h65w-5b3e9079b1.json');
-const { user } = require('firebase-functions/v1/auth');
+var serviceAccount = require('./mirky-351704-firebase-adminsdk-3h65w-5b3e9079b1.json');
 
 // Initialize 
 const fApp = initializeApp({
@@ -97,7 +96,7 @@ app.post('/auth/signup', async (req,res) => {
 })
 
 // Login
-app.get('/auth/login', async (req,res) => {
+app.post('/auth/login', async (req,res) => {
 
     const { email, password, apiKey } = req.body;
 
@@ -218,9 +217,16 @@ app.put('/auth/update/username', async (req, res) => {
 
 })
 
+'use strict';
 
+// Main page
+app.get('/', (req,res) => {
+    res.send('poop')
+})
 
 // Launch server
 app.listen(PORT, () => {
     console.log(`Live on: http://localhost:${PORT}`)
 })
+
+module.exports = app;

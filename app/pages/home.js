@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Pressable } from 'react-native';
-import { LinearTextGradient } from "react-native-text-gradient";
+import { LinearGradient } from 'expo-linear-gradient';
 
 const HomeScreen = ({ navigation }) => {
   const [srVal, setCount] = useState('0');
@@ -53,17 +53,21 @@ const HomeScreen = ({ navigation }) => {
 
       <View style={styles.body}>
 
-        {/* <Text style={styles.bodySendValue}>${srVal}</Text> */}
+        <Text style={styles.bodySendValue}>${srVal}</Text>
 
-        <LinearTextGradient
-          style={{ fontWeight: "bold", fontSize: 72 }}
-          locations={[0, 1]}
-          colors={["red", "blue"]}
+        
+
+        {/* <LinearGradient
           start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 0 }}
-        >
-          {/* <Text>THIS IS TEXT GRADIENT</Text> */}
-        </LinearTextGradient>;
+          end={{ x: 1, y: 1, }}
+          colors={[ 'red', 'blue' ]}
+        > 
+          <Text style={styles.bodySendValue}>${srVal}</Text>
+
+        </LinearGradient> */}
+
+        
+        
 
         <View style={styles.spacer2} />
         <View style={styles.spacer2} />
@@ -286,7 +290,8 @@ const styles = StyleSheet.create({
     color: "#003AFF",
     fontWeight: '700',
     position: 'absolute',
-    top: 20
+    top: 20,
+    // backgroundColor: 'transparent'
   },
 
   keyboardRow: {
