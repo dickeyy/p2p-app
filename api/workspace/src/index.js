@@ -5,7 +5,7 @@ const { initializeApp } = require("firebase-admin/app");
 const { getAuth } = require('firebase-admin/auth');
 const argon2 = require('argon2');
 const dotenv = require('dotenv');
-dotenv.config({ path: './src/.env' })
+dotenv.config({ path: '.env' })
 
 // Twilio Config
 const twilioAccountSid = process.env.TWILIO_ACCOUNT_SID;
@@ -24,7 +24,7 @@ const db = mClient.db('main')
 
 // Connect to firebase
 // Service account
-var serviceAccount = require('./mirky-351704-firebase-adminsdk-3h65w-5b3e9079b1.json');
+var serviceAccount = require('../../mirky-351704-firebase-adminsdk-3h65w-5b3e9079b1.json');
 const { user } = require('firebase-functions/v1/auth');
 
 // Initialize 
