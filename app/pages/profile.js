@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Pressable } from 'react-native';
+import { ScrollView } from "react-native-gesture-handler";
 
 const ProfileScreen = ({ navigation }) => {
   const [srVal, setCount] = useState('0');
@@ -30,134 +31,109 @@ const ProfileScreen = ({ navigation }) => {
   }
   return (
 
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="light" />
-      <View style={styles.spacer1} />
-      {/* <View style={{ flex: 1, backgroundColor: 'powderblue' }} />
-      <View style={{ flex: 2, backgroundColor: 'skyblue' }} />
-      <View style={{ height: 20, backgroundColor: 'powderblue' }} /> */}
+    <ScrollView style={styles.container}>
 
+      <StatusBar style="light" />
+      
       <View style={styles.header}>
-        <Pressable style={styles.headUserPfpBtn} onPress={() => {navigation.navigate('Home')}}>
-          <Image style={styles.headUserPfp} source={require('../assets/user.png')} />
-        </Pressable>
-        <Pressable style={styles.headScanIconBtn} onPress={() => {navigation.navigate('Home')}}>
-          <Image style={styles.headScanIcon} source={require('../assets/scan.png')} />
-        </Pressable>
-        <Pressable style={styles.headHistoryIconBtn}>
-          <Image style={styles.headHistoryIcon} source={require('../assets/history.png')} />
-        </Pressable>
+        
+        
       </View>
 
       <View style={styles.body}>
 
-        <Text style={styles.bodySendValue}>${srVal}</Text>
+        <Image style={styles.profilePicture} source={require('../assets/user.png')} />
 
-        <View style={styles.spacer2} />
-        <View style={styles.spacer2} />
-        <View style={styles.spacer2} />
+        <Text style={styles.username}>@username</Text>
 
-        <View style={styles.keyboardRow}>
-        
-          <Pressable style={styles.keyboardNum} onPress={() => {typeNum('1')}}>
-            <Text style={styles.keyboardNumText}>balls</Text>
-          </Pressable>
-
-          <Pressable style={styles.keyboardNum} onPress={() => {typeNum('2')}}>
-            <Text style={styles.keyboardNumText}>2</Text>
-          </Pressable>
-
-          <Pressable style={styles.keyboardNum} onPress={() => {typeNum('3')}}>
-            <Text style={styles.keyboardNumText}>3</Text>
-          </Pressable>
-        </View>
-
-        <View style={styles.spacer2} />
-
-        <View style={styles.keyboardRow}>
-        
-          <Pressable style={styles.keyboardNum} onPress={() => {typeNum('4')}}>
-            <Text style={styles.keyboardNumText}>4</Text>
-          </Pressable>
-
-          <Pressable style={styles.keyboardNum} onPress={() => {typeNum('5')}}>
-            <Text style={styles.keyboardNumText}>5</Text>
-          </Pressable>
-
-          <Pressable style={styles.keyboardNum} onPress={() => {typeNum('6')}}>
-            <Text style={styles.keyboardNumText}>6</Text>
-          </Pressable>
-        </View>
-
-        <View style={styles.spacer2} />
-
-        <View style={styles.keyboardRow}>
-        
-          <Pressable style={styles.keyboardNum} onPress={() => {typeNum('7')}}>
-            <Text style={styles.keyboardNumText}>7</Text>
-          </Pressable>
-
-          <Pressable style={styles.keyboardNum} onPress={() => {typeNum('8')}}>
-            <Text style={styles.keyboardNumText}>8</Text>
-          </Pressable>
-
-          <Pressable style={styles.keyboardNum} onPress={() => {typeNum('9')}}>
-            <Text style={styles.keyboardNumText}>9</Text>
-          </Pressable>
-        </View>
-
-        <View style={styles.spacer2} />
-
-        <View style={styles.keyboardRow}>
-        
-          <Pressable style={styles.keyboardNum} onPress={() => {typeNum('.')}}>
-            <Text style={styles.keyboardNumText}>. </Text>
-          </Pressable>
-
-          <Pressable style={styles.keyboardNum} onPress={() => {typeNum('0')}}>
-            <Text style={styles.keyboardNumText}>0</Text>
-          </Pressable>
-
-          <Pressable style={styles.keyboardNum} onPress={() => {typeNum('<')}}>
-            <Text style={styles.keyboardNumText}>&lt;</Text>
-          </Pressable>
-
+        <View
+          style={{
+            borderBottomColor: '#2d2d2d',
+            borderBottomWidth: 3,
+            top: 270,
+            alignSelf: 'stretch',
+          }}
+        /> 
           
+        <View style={styles.settingsCatContainer}>
+          <Pressable style={styles.headScanIconBtn} onPress={() => {navigation.navigate('Settings_Profile')}}>
+            
+            <Text style={styles.settingsLabel}>Profile</Text>
+          
+            <Image style={styles.settingViewIcon} source={require('../assets/right-arrow.png')} />
+          </Pressable>
+
         </View>
-        
+
         <View style={styles.spacer2} />
 
-        <View style={styles.sendBtnGroup}>
+        <View style={styles.settingsCatContainer}>
+          <Pressable style={styles.headScanIconBtn} onPress={() => {navigation.navigate('Settings_Account')}}>
 
-          <TouchableHighlight>
-              <View style={styles.sendButton}>
-                <Text style={styles.sendButtonText}>Send</Text>
-              </View>
-          </TouchableHighlight>
-
-          <TouchableHighlight>
-              <View style={styles.sendButton}>
-                <Text style={styles.sendButtonText}>Request</Text>
-              </View>
-          </TouchableHighlight>
+            <Text style={styles.settingsLabel}>Account</Text>
+          
+            <Image style={styles.settingViewIcon} source={require('../assets/right-arrow.png')} />
+          </Pressable>
 
         </View>
 
+        <View style={styles.spacer2} />
+
+        <View style={styles.settingsCatContainer}>
+          <Pressable style={styles.headScanIconBtn} onPress={() => {navigation.navigate('Settings_BankAccounts')}}>
+
+            <Text style={styles.settingsLabelBank}>Bank Accounts</Text>
+          
+            <Image style={styles.settingViewIcon} source={require('../assets/right-arrow.png')} />
+          </Pressable>
+
+        </View>
+
+        <View style={styles.spacer2} />
+
+        <View style={styles.settingsCatContainer}>
+          <Pressable style={styles.headScanIconBtn} onPress={() => {navigation.navigate('Settings_Security')}}>
+
+            <Text style={styles.settingsLabel}>Security</Text>
+          
+            <Image style={styles.settingViewIcon} source={require('../assets/right-arrow.png')} />
+          </Pressable>
+
+        </View>
+
+        <View style={styles.spacer2} />
+
+        <View style={styles.settingsCatContainer}>
+          <Pressable style={styles.headScanIconBtn} onPress={() => {navigation.navigate('Settings_Notifications')}}>
+
+            <Text style={styles.settingsLabel}>Notifications</Text>
+          
+            <Image style={styles.settingViewIcon} source={require('../assets/right-arrow.png')} />
+          </Pressable>
+
+        </View>
+
+        <View style={styles.spacer2} />
+        <View style={styles.spacer2} />
+        <View style={styles.spacer2} />
+
+
+        <View style={styles.settingsCatContainerSignOut}>
+          <Pressable style={styles.headScanIconBtn} >
+
+            <Text style={styles.settingsLabelSignOut}>Sign Out</Text>
+          
+          </Pressable>
+
+        </View>
+
+        <View style={styles.spacer2} />
+
+        
+
       </View>
 
-      <View style={styles.footer}>
-        <Pressable style={styles.footTransferIcon} onPress={() => {navigation.navigate('Home')}}>
-          <Image style={styles.footTransferIcon} source={require('../assets/transfer-active.png')} />
-        </Pressable>
-        <Pressable style={styles.footBankIcon}>
-          <Image style={styles.footBankIcon} source={require('../assets/bank.png')} />
-        </Pressable>
-        <Pressable style={styles.footCardIcon}>
-          <Image style={styles.footCardIcon} source={require('../assets/credit-card.png')} />
-        </Pressable>
-      </View>
-
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 
@@ -170,10 +146,11 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    height: 60,
+    height: 20,
     flexDirection: 'row',
     alignContent: 'center',
     justifyContent: 'center',
+    top: 60
   },  
 
   body: {
@@ -181,6 +158,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingBottom: 500
   },
 
   footer: {
@@ -201,14 +179,7 @@ const styles = StyleSheet.create({
   },
 
   spacer2: {
-    height: 30
-  },
-
-  headUserPfp: {
-    height: 40,
-    width: 40,
-    position: 'absolute',
-    right: 10,
+    height: 20
   },
 
   headUserPfpBtn: {
@@ -217,10 +188,19 @@ const styles = StyleSheet.create({
   },
 
   headScanIcon: {
-    height: 40,
-    width: 40,
+    height: 50,
+    width: 50,
     position: 'absolute',
-    left: 10
+    left: 15,
+    top: 10,
+  },
+
+  settingViewIcon: {
+    height: 50,
+    width: 50,
+    position: 'absolute',
+    left: 280,
+    top: 20
   },
 
   headScanIconBtn: {
@@ -228,90 +208,61 @@ const styles = StyleSheet.create({
     left: 10
   },
 
-  headHistoryIconBtn: {
-    position: 'absolute',
-    right: 10,
+  profilePicture: {
+    height: 150,
+    width: 150,
+    position: "absolute",
+    top: 60,
   },
 
-  headHistoryIcon: {
-    height: 40,
-    width: 40,
-    position: 'absolute',
-    right: 70,
-  },
-
-  footTransferIcon: {
-    height: 60,
-    width: 60,
-    position: 'absolute',
-    alignSelf: 'center',
-    bottom: 10,
-  },
-
-  footBankIcon: {
-    height: 50,
-    width: 50,
-    position: 'absolute',
-    left: 20
-  },
-
-  footCardIcon: {
-    height: 60,
-    width: 60,
-    position: 'absolute',
-    right: 20,
-  },
-
-  bodySendValue: {
-    fontSize: 90,
-    color: "white",
-    fontWeight: '700',
-    position: 'absolute',
-    top: 20
-  },
-
-  keyboardRow: {
-    flexDirection: 'row',
-    alignSelf: 'stretch',
-    alignContent: 'center',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-
-  },
-
-  keyboardNum: {
-    color: 'white',
-    position: 'relative',
-  },
-
-  keyboardNumText: {
+  username: {
     color: '#9d9d9d',
-    fontSize: 50,
-    fontWeight: '700',
-  },
-
-  sendButton: {
-    width: 170,
-    backgroundColor: "#4d4d4d",
-    borderColor: '#4d4d4d',
-    borderWidth: 5,
-    borderRadius: 30,
-    alignContent: 'center',
-    alignItems: 'center',
-  },
-
-  sendButtonText: {
-    color: 'white',
-    textAlign: 'center',
     fontSize: 25,
-    fontWeight: '700',
+    position: "absolute",
+    top: 210
   },
 
-  sendBtnGroup: {
-    flexDirection: 'row',
-    alignSelf: 'stretch',
-    alignContent: 'center',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
+  settingsCatContainer: {
+    backgroundColor: 'black',
+    width: 350,
+    height: 90,
+    top: 300,
+    borderRadius: 13
+  },
+
+  settingsCatContainerSignOut: {
+    backgroundColor: 'black',
+    width: 350,
+    height: 90,
+    top: 300,
+    borderRadius: 13,
+    borderWidth: 3,
+    borderColor: '#fc2d3b',
+  }, 
+  
+  settingsLabelSignOut: {
+    color: '#fc2d3b',
+    fontSize: 40,
+    top: 18,
+    left: 80,
+    fontWeight: '700'
+  },
+
+  settingsLabel: {
+    color: 'white',
+    fontSize: 40,
+    top: 20,
+    left: 30,
+    fontWeight: '700'
+  },
+
+  settingsLabelBank: {
+    color: 'white',
+    fontSize: 35,
+    top: 22,
+    left: 30,
+    fontWeight: '700'
   }
+
+  
 });

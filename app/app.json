@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "app",
-    "slug": "app",
+    "name": "mirky",
+    "slug": "mirky",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "orientation": "portrait"
   }
 }

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Pressable } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+// import { LinearGradient } from 'expo-linear-gradient';
+// import { MaskedText } from "react-native-mask-text";
 
 const HomeScreen = ({ navigation }) => {
   const [srVal, setCount] = useState('0');
@@ -287,7 +288,7 @@ const styles = StyleSheet.create({
 
   bodySendValue: {
     fontSize: 90,
-    color: "#003AFF",
+    color: "#4976fb",
     fontWeight: '700',
     position: 'absolute',
     top: 20,

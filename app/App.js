@@ -38,6 +38,12 @@ const App = () => {
           options={{ headerShown: false, animation: 'fade' }}
         />
 
+        <Stack.Screen
+          name="History"
+          component={ProfilePage}
+          options={{ headerShown: false, animation: 'fade' }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
