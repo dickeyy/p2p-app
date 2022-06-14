@@ -129,6 +129,13 @@ const ProfileScreen = ({ navigation }) => {
 
         <View style={styles.spacer2} />
 
+
+        <Text style={styles.bottomText}>© Mirky Ltd.</Text>
+
+
+        {/* <Pressable>
+          <Image style={styles.twitterIcon} source={require('../assets/twitter-profile-page.png')} />
+        </Pressable> */}
         
 
       </View>
@@ -231,7 +238,7 @@ const styles = StyleSheet.create({
   },
 
   settingsCatContainerSignOut: {
-    backgroundColor: 'black',
+    backgroundColor: '#f51c0c15',
     width: 350,
     height: 90,
     top: 300,
@@ -262,7 +269,19 @@ const styles = StyleSheet.create({
     top: 22,
     left: 30,
     fontWeight: '700'
-  }
+  },
+
+  bottomText: {
+    color: '#2d2d2d',
+    fontSize: 20,
+    top: 350,
+  },
+
+  twitterIcon: {
+    top: 370,
+    height: 40,
+    width: 40
+  },
 
   
 });
